@@ -59,6 +59,24 @@
             background-color: #333333;
             color: white;
         }
+        /* 进度条样式 */
+        progress{
+            width:70%;
+            height:22px;
+            margin:8px 0;
+        }
+        /* 密码区域样式 */
+        .pwd-box{
+            margin:10px 0;
+        }
+        input{
+            padding:6px;
+            margin-right:8px;
+        }
+        button{
+            padding:6px 12px;
+            cursor:pointer;
+        }
         /* 响应式：手机屏幕适配 */
         @media (max-width:768px) {
             section{
@@ -83,40 +101,62 @@
         </nav>
     </header>
 
-    <!--个人简介板块-->
-    <section id="about">
+    <!--个人简介板块，draggable禁止拖拽复制-->
+    <section id="about" draggable="false">
         <h3>👤 个人简介</h3>
         <p>我是一名计算机专业的学生，目前正在学习网页前端开发相关知识。平时喜欢钻研网页布局，不断练习HTML与CSS，希望可以设计出美观实用的网页。</p >
     </section>
 
-    <!--技能展示板块-->
-    <section id="skill">
+    <!--技能展示板块，加入progress进度条-->
+    <section id="skill" draggable="false">
         <h3>💻 技能展示</h3>
-        <p>1. 熟练使用HTML各类基础标签搭建网页框架</p >
-        <p>2. 掌握CSS盒子模型、页面布局、样式美化</p >
-        <p>3. 可以实现hover鼠标悬停交互效果</p >
-        <p>4. 基础响应式网页设计，适配电脑与手机屏幕</p >
+        <p>HTML基础：<progress value="85" max="100"></progress> 85%</p >
+        <p>CSS样式：<progress value="75" max="100"></progress> 75%</p >
+        <p>JavaScript：<progress value="40" max="100"></progress> 40%</p >
+        <p>摄影爱好：<progress value="60" max="100"></progress> 60%</p >
     </section>
 
     <!--作品展示板块-->
-    <section id="works">
+    <section id="works" draggable="false">
         <h3>📁 作品展示</h3>
         <p>1. CSS盒子模型练习页面</p >
         <p>2. 简易新闻排版网页</p >
         <p>3. 本次个人主页项目</p >
     </section>
 
-    <!--联系方式板块-->
-    <section id="contact">
+    <!--联系方式板块：hidden隐藏内容，输入密码解锁-->
+    <section id="contact" draggable="false">
         <h3>📮 联系方式</h3>
         <p>邮箱：student@example.com</p >
         <p>微信：student001</p >
+        <div class="pwd-box">
+            <p>🔒 私密信息（需要密码查看）</p >
+            <input type="password" id="pwdInput" placeholder="请输入密码">
+            <button onclick="checkPwd()">确认解锁</button>
+            <!-- 私密内容默认隐藏 hidden -->
+            <div id="secretInfo" hidden>
+                <p>我的手机号：138XXXX8888</p >
+                <p>我的生日：2006.05.20</p >
+            </div>
+        </div>
     </section>
 
     <!--页脚区域-->
-    <footer>
+    <footer draggable="false">
         <p>© 2026 我的个人主页 版权所有</p >
     </footer>
 
+<script>
+//密码校验函数，正确密码：123456
+function checkPwd(){
+    let inputVal = document.getElementById("pwdInput").value;
+    let secretDom = document.getElementById("secretInfo");
+    if(inputVal === "123456"){
+        secretDom.hidden = false;
+    }else{
+        alert("密码错误！");
+    }
+}
+</script>
 </body>
 </html>
