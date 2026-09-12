@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 响应式必备视口标签 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <style>
+        /* 全局初始化 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft Yahei", sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* 头部导航 */
+        header {
+            background-color: #2b5797;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        header h2 {
+            margin-bottom: 15px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 17px;
+        }
+        /* 鼠标悬浮高亮交互效果 hover */
+        nav a:hover {
+            color: #ffd700;
+        }
+        /* 内容区块通用样式 */
+        section {
+            width: 80%;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #fff;
+            border: 1px solid #d0d0d0;
+            border-radius: 10px;
+        }
+        section h3 {
+            margin-bottom: 12px;
+            color:#2b5797;
+        }
+        /* 页脚 */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            background-color: #333333;
+            color: white;
+        }
+        /* 响应式：手机屏幕适配 */
+        @media (max-width:768px) {
+            section{
+                width: 93%;
+            }
+            nav a{
+                margin: 0 8px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--网页头部导航-->
+    <header>
+        <h2>欢迎来到我的个人主页</h2>
+        <nav>
+            <a href=" ">个人简介</a >
+            <a href="#skill">技能展示</a >
+            <a href="#works">作品展示</a >
+            <a href="#contact">联系方式</a >
+        </nav>
+    </header>
+
+    <!--个人简介板块-->
+    <section id="about">
+        <h3>👤 个人简介</h3>
+        <p>我是一名计算机专业的学生，目前正在学习网页前端开发相关知识。平时喜欢钻研网页布局，不断练习HTML与CSS，希望可以设计出美观实用的网页。</p >
+    </section>
+
+    <!--技能展示板块-->
+    <section id="skill">
+        <h3>💻 技能展示</h3>
+        <p>1. 熟练使用HTML各类基础标签搭建网页框架</p >
+        <p>2. 掌握CSS盒子模型、页面布局、样式美化</p >
+        <p>3. 可以实现hover鼠标悬停交互效果</p >
+        <p>4. 基础响应式网页设计，适配电脑与手机屏幕</p >
+    </section>
+
+    <!--作品展示板块-->
+    <section id="works">
+        <h3>📁 作品展示</h3>
+        <p>1. CSS盒子模型练习页面</p >
+        <p>2. 简易新闻排版网页</p >
+        <p>3. 本次个人主页项目</p >
+    </section>
+
+    <!--联系方式板块-->
+    <section id="contact">
+        <h3>📮 联系方式</h3>
+        <p>邮箱：student@example.com</p >
+        <p>微信：student001</p >
+    </section>
+
+    <!--页脚区域-->
+    <footer>
+        <p>© 2026 我的个人主页 版权所有</p >
+    </footer>
+
+</body>
+</html>
